@@ -21,7 +21,27 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Firebase -->
-    http://127.0.0.1:5500/index.html
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBFtj7DvIsuPBTLzNvoimCL0gdRaVW6iIY",
+    authDomain: "ballmovement-32892.firebaseapp.com",
+    databaseURL: "https://ballmovement-32892-default-rtdb.firebaseio.com",
+    projectId: "ballmovement-32892",
+    storageBucket: "ballmovement-32892.appspot.com",
+    messagingSenderId: "869198850291",
+    appId: "1:869198850291:web:c065e9c26d41ed05b96f86"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
   </head>
   <body>
     <script src="./js/Game.js"></script>
