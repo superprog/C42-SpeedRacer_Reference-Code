@@ -8,9 +8,9 @@ class Game {
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
     this.playerMoving = false;
-    
+
     this.leftKeyActive = false;
-    this.blast = false;                          //C42//SA
+    this.blast = false; //C42//SA
   }
 
   getState() {
@@ -35,14 +35,14 @@ class Game {
     car1 = createSprite(width / 2 - 50, height - 100);
     car1.addImage("car1", car1_img);
     car1.scale = 0.07;
-   
-    car1.addImage("blast", blastImage);                        //C42 //SA
+
+    car1.addImage("blast", blastImage); //C42 //SA
 
     car2 = createSprite(width / 2 + 100, height - 100);
     car2.addImage("car2", car2_img);
     car2.scale = 0.07;
-    
-    car2.addImage("blast", blastImage);                        //C42//SA
+
+    car2.addImage("blast", blastImage); //C42//SA
 
     cars = [car1, car2];
 
@@ -51,10 +51,10 @@ class Game {
     obstacles = new Group(); //C41 //SA
 
     // Adding fuel sprite in the game
-    this.addSpirtes(fuels, 4, fuelImage, 0.02);
+    this.addSprites(fuels, 4, fuelImage, 0.02);
 
     // Adding coin sprite in the game
-    this.addSpirtes(powerCoins, 18, powerCoinImage, 0.09);
+    this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
 
     //C41 //BP //SA
     var obstaclesPositions = [
@@ -73,7 +73,7 @@ class Game {
     ];
 
     //Adding obstacles sprite in the game
-    this.addSpirtes(
+    this.addSprites(
       obstacles,
       obstaclesPositions.length,
       obstacle1Image,
@@ -83,7 +83,7 @@ class Game {
   }
 
   //C41 //SA
-  addSpirtes(spriteGroup, numberOfSprites, spirteImage, scale, positions = []) {
+  addSprites(spriteGroup, numberOfSprites, spriteImage, scale, positions = []) {
     for (var i = 0; i < numberOfSprites; i++) {
       var x, y;
 
@@ -91,16 +91,16 @@ class Game {
       if (positions.length > 0) {
         x = positions[i].x;
         y = positions[i].y;
-        spirteImage = positions[i].image;
+        spriteImage = positions[i].image;
       } else {
         x = random(width / 2 + 150, width / 2 - 150);
         y = random(-height * 4.5, height - 400);
       }
-      var spirte = createSprite(x, y);
-      spirte.addImage("spirte", spirteImage);
+      var sprite = createSprite(x, y);
+      sprite.addImage("sprite", spriteImage);
 
-      spirte.scale = scale;
-      spriteGroup.add(spirte);
+      sprite.scale = scale;
+      spriteGroup.add(sprite);
     }
   }
 
@@ -169,8 +169,8 @@ class Game {
 
           this.handleFuel(index);
           this.handlePowerCoins(index);
-          this.handleCarACollisionWithCarB(index);              //C41//BP//TA
-          this.handleObstacleCollision(index);                  //C41//SA
+          this.handleCarACollisionWithCarB(index); //C41//BP//TA
+          this.handleObstacleCollision(index); //C41//SA
 
           //C42//TA
           if (player.life <= 0) {
@@ -368,7 +368,7 @@ class Game {
 
         //Reducing Player Life
         if (player.life > 0) {
-          player.life -= 185/4;
+          player.life -= 185 / 4;
         }
 
         player.update();
@@ -414,6 +414,6 @@ class Game {
     });
   }
   end() {
-    console.log("Game Over")
+    console.log("Game Over");
   }
 }
